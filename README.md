@@ -1,9 +1,7 @@
 # SEO Analysis and Link Checker
-
 A Python 3 tool for comprehensive website SEO analysis and link validation with support for sitemaps, multiple output formats, and multi-threading for faster crawling.
 
 ## Features
-
 - **SEO Analysis**: Word count, page titles, meta descriptions, keyword extraction, and SEO warnings
 - **Link Analysis**: HTTP status code validation and broken link detection
 - **Sitemap Support**: Analyze all URLs listed in XML sitemaps
@@ -18,6 +16,23 @@ A Python 3 tool for comprehensive website SEO analysis and link validation with 
 - Required dependencies: `requests`, `beautifulsoup4`
 
 ### Install Dependencies
+
+#### Using requirements.txt (Recommended)
+```bash
+# Create a virtual environment
+python -m venv seo_env
+
+# Activate the virtual environment
+# On Windows:
+seo_env\Scripts\activate
+# On macOS/Linux:
+source seo_env/bin/activate
+
+# Install dependencies from requirements.txt
+pip install -r requirements.txt
+```
+
+#### Manual Installation
 ```bash
 pip install requests beautifulsoup4
 ```
@@ -48,6 +63,10 @@ python seo_link_analyzer.py https://example.com --output-format json
 python seo_link_analyzer.py https://example.com --output-format html
 ```
 
+The HTML output provides a comprehensive, styled report with detailed SEO analysis and link validation results. The report includes interactive sections for easy navigation and visual indicators for broken links and SEO issues.
+
+*[Screenshot placeholder: HTML output report showing SEO analysis dashboard with color-coded link status, keyword density charts, and detailed recommendations]*
+
 #### Save to File
 ```bash
 python seo_link_analyzer.py https://example.com --output-format html --output-file report.html
@@ -55,7 +74,6 @@ python seo_link_analyzer.py https://example.com --output-format html --output-fi
 
 ### Link Types
 Specify which types of links to analyze using `--link-types`:
-
 - `a` - Anchor tags (links)
 - `img` - Image tags
 - `script` - Script tags
@@ -73,16 +91,10 @@ python seo_link_analyzer.py https://example.com --link-types a img
 python seo_link_analyzer.py https://example.com --link-types a img script link
 ```
 
-### Advanced Options
+### Performance Options
 
-#### Skip Link Analysis
-Perform only SEO analysis, skip link checking:
-```bash
-python seo_link_analyzer.py https://example.com --no-links
-```
-
-#### Configure Worker Threads
-Set the number of worker threads for faster processing (default: 4):
+#### Multi-threading
+Control the number of worker threads for faster analysis:
 ```bash
 python seo_link_analyzer.py https://example.com --workers 8
 ```
@@ -108,7 +120,6 @@ python seo_link_analyzer.py https://example.com \
 ```
 
 ## Output Information
-
 The script provides detailed reports including:
 
 ### SEO Analysis
@@ -127,7 +138,6 @@ The script provides detailed reports including:
 - Source page information for each broken link
 
 ## Command Line Options
-
 ```
 positional arguments:
   url                   The URL to analyze
@@ -146,5 +156,4 @@ optional arguments:
 ```
 
 ## License
-
 This project is open source and available under the MIT License.
